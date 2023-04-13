@@ -1,0 +1,7 @@
+// 定义一个Map的变量
+@import "./_dark.scss";
+@import "./_light.scss";
+$themes: (
+    light: $light,
+    dark: $dark,
+);

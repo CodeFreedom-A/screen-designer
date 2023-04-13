@@ -1,0 +1,33 @@
+@import "../theme_val.scss";
+
+@mixin def_all_themes {
+
+    // 这里遍历出来的name就是dark和light
+    @each $theme-name,
+    $theme-value in $themes {
+        // 这里将value暴露成全局的
+        $theme-value: $theme-value !global;
+
+        [data-theme="#{''+$theme-name}"] & {
+            // 相当于插槽
+            @content;
+        }
+    }
+}
+
+// 获取主体下的样式
+@function get_theme_value($key) {
+    // 因为上面已经把value暴露成全局的了,所以这可直接使用
+    @return map-get($theme-value, $key);
+}
+
+// 暴露出去
+@mixin bg($bg: 'background-point') {
+    @include def_all_themes {
+        background-image: get_theme_value($bg);
+    }
+}
+
+// @mixin SideBg() {
+//     @include def_all_themes
+// }
