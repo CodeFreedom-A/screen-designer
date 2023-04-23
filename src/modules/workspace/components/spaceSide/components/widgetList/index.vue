@@ -2,7 +2,7 @@
  * @Author: sunheng
  * @Date: 2023-03-25 19:50:33
  * @LastEditors: sunheng
- * @LastEditTime: 2023-04-13 17:09:59
+ * @LastEditTime: 2023-04-19 09:58:49
  * @Description: 请填写简介
 -->
 <template>
@@ -25,15 +25,10 @@
     </div>
 </template>
 <script setup lang="ts">
-import { reactive } from "vue";
 import WidBox from "../widBox/index.vue";
 import ChartOption from "../chartOption/index.vue";
 import { BarChart } from "@vicons/ionicons5";
-import { weigetChartList } from "./data/index";
 import { menuOptions, DefauletValue, DefauletObject, clickItemHandle } from "../../hooks/useAside.hook";
-
-
-const weigetlist: Array<object> = weigetChartList;
 </script>
 <style scoped lang="scss">
 .weigetItem {

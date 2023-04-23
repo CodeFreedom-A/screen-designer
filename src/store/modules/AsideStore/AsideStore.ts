@@ -2,7 +2,7 @@
  * @Author: sunheng
  * @Date: 2023-04-11 10:29:02
  * @LastEditors: sunheng
- * @LastEditTime: 2023-04-11 14:18:43
+ * @LastEditTime: 2023-04-17 16:21:50
  * @Description: 请填写简介
  */
 import { defineStore } from "pinia";
@@ -17,6 +17,8 @@ const useAsideStore = defineStore({
     }),
     getters: {
         getPackagesList(): PackagesType {
+            console.log(this.packagesList,'this.packagesList');
+            
             return this.packagesList;
         },
     },

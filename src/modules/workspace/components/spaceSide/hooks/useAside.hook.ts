@@ -2,7 +2,7 @@
  * @Author: sunheng
  * @Date: 2023-04-11 10:18:02
  * @LastEditors: sunheng
- * @LastEditTime: 2023-04-11 18:11:19
+ * @LastEditTime: 2023-04-23 14:48:54
  * @Description: 请填写简介
  */
 import { ref } from "vue";
@@ -33,7 +33,6 @@ const packagesListInfo = {
 // 提取信息,加入到menu里,这里的是一个
 const handleFormat = () => {
     for (const key in getPackagesList) {
-        console.log(key, getPackagesList, "我是key");
         menuOptions.push({
             key,
             // @ts-ignore

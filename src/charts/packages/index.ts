@@ -13,4 +13,5 @@ export type PackagesType = {
 };
 export let packagesList = {
     [PackagesCategoryEnum.CHARTS]: chartsList,
+    
 };

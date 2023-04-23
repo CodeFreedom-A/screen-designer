@@ -2,7 +2,7 @@
  * @Author: sunheng
  * @Date: 2023-04-12 15:38:57
  * @LastEditors: sunheng
- * @LastEditTime: 2023-04-13 17:37:48
+ * @LastEditTime: 2023-04-23 16:05:25
  * @Description: 请填写简介
 -->
 <template>
@@ -10,7 +10,7 @@
         <div
             class="weigetItem"
             draggable="true"
-            v-for="item in props.dragList.list"
+            v-for="item in props.dragList"
             :key="item.key"
             @dragstart="ondragStart($event, item)"
         >
