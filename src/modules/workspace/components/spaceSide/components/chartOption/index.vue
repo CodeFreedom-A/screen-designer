@@ -2,7 +2,7 @@
  * @Author: sunheng
  * @Date: 2023-04-11 15:23:20
  * @LastEditors: sunheng
- * @LastEditTime: 2023-04-23 16:19:22
+ * @LastEditTime: 2023-04-23 16:57:05
  * @Description: 请填写简介
 -->
 <template>
@@ -72,6 +72,8 @@ watch(
                     label:menuList.categoryNames[key]
                   })
             }
+            menuList.selectOption=menuList.categorys.all
+            menuList.selectName='all'
         }
 
 
