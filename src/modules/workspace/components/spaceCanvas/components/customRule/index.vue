@@ -23,6 +23,8 @@
                     hoverable
                     id="canvas"
                     :style="canvasStyle"
+                    class="cardbg"
+                    @contextmenu="onContextMenu($event, proxy)"
                 >
                     <slot></slot>
                 </n-card>
@@ -31,8 +33,19 @@
     </div>
 </template>
 <script setup lang="ts">
-import { computed, ref, reactive, onMounted, nextTick } from "vue";
+import {
+    computed,
+    ref,
+    reactive,
+    onMounted,
+    nextTick,
+    ComponentInternalInstance,
+} from "vue";
 
+import { onContextMenu, getProxy } from "../../hooks/contentMenu.hook";
+
+import "@/assets/iconfont/iconfont.js";
+let proxy: Object | null = getProxy();
 const rectWidth = 600;
 const rectHeight = 320;
 const screensRef = ref(null);
@@ -40,13 +53,14 @@ const containerRef = ref(null);
 let divHeight = ref(0);
 let divWidth = ref(0);
 const state = reactive({
-    scale: 0.65, //658813476562495, //1,
+    scale: 0.5, //658813476562495, //1,
     startX: 0,
-    startY: 0,
+    startY: 9,
     thick: 20,
     isShowRuler: true, // 显示标尺
     isShowReferLine: false, // 显示参考线
 });
+
 const shadow = computed(() => {
     return {
         x: 0,
@@ -62,10 +76,12 @@ const canvasStyle = computed(() => {
         transform: `scale(${state.scale})`,
     };
 });
+
+// console.log(getCurrentInstance(),'getCurrentInstance(12132)');
 onMounted(() => {
     // 滚动居中
-    screensRef.value.scrollLeft =
-        containerRef.value.getBoundingClientRect().width / 2 - 2400;
+    screensRef!.value!.scrollLeft =
+        containerRef!.value!.getBoundingClientRect().width / 2 - 2400;
 
     nextTick().then(() => {
         divWidth.value = document.querySelector(".wrapper").offsetWidth - 20;
@@ -110,8 +126,8 @@ const handleWheel = (e: {
 };
 const showLineClick = () => {
     state.isShowReferLine = !state.isShowReferLine;
-    console.log(state.isShowReferLine, "state.isShowReferLine");
 };
+//
 </script>
 <style lang="scss" scoped>
 body {
@@ -140,8 +156,8 @@ body * {
     width: 100%;
     height: 100%;
     overflow: auto;
-    @include bg("background-color");
-    @include bg();
+    // @include bg("background-color");
+    @include bgpoint("background-point");
     background-size: 16px 16px, 16px 16px;
 }
 
@@ -161,11 +177,18 @@ body * {
     left: 100px;
 }
 #canvas {
+
     width: 1920px;
     height: 1080px;
     position: relative;
     overflow: hidden;
     box-shadow: 0 8px 10px #00000012;
-    @include bg("card-background");
+     @include bgcard("card-background");
 }
+    // :deep(.n-card){
+    //  background: red;
+    
+    // }
+
+
 </style>

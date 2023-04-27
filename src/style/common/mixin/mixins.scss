@@ -22,9 +22,19 @@
 }
 
 // 暴露出去
-@mixin bg($bg: 'background-point') {
+@mixin bg($bg) {
+    @include def_all_themes {
+        background: get_theme_value($bg);
+    }
+}
+@mixin bgpoint($bg) {
     @include def_all_themes {
         background-image: get_theme_value($bg);
+    }
+}
+@mixin bgcard($bg) {
+    @include def_all_themes {
+        background: get_theme_value($bg);
     }
 }
 

@@ -2,13 +2,13 @@
  * @Author: sunheng
  * @Date: 2023-03-13 13:36:43
  * @LastEditors: sunheng
- * @LastEditTime: 2023-03-31 20:22:16
+ * @LastEditTime: 2023-04-27 14:43:34
  * @Description: 请填写简介
 -->
 <template>
     <n-config-provider
         :theme="theme"
-        :theme-overrides="theme == null ? ThemeOverrides : null"
+        :theme-overrides="ThemeOverrides"
     >
         <n-space vertical>
             <Header></Header>

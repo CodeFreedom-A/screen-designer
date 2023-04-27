@@ -1,0 +1,114 @@
+{
+  "id": "4040622",
+  "name": "desiginer",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "可视化设计器",
+  "glyphs": [
+    {
+      "icon_id": "35267408",
+      "name": "回顶部-copy",
+      "font_class": "zhiding-04-04-copy-copy",
+      "unicode": "ec7b",
+      "unicode_decimal": 60539
+    },
+    {
+      "icon_id": "1117",
+      "name": "剪切",
+      "font_class": "jianqie",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "1122",
+      "name": "剪切文件",
+      "font_class": "jianqiewenjian",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "577357",
+      "name": "删除",
+      "font_class": "shanchu",
+      "unicode": "e74b",
+      "unicode_decimal": 59211
+    },
+    {
+      "icon_id": "1727486",
+      "name": "241隐藏、不可见",
+      "font_class": "yincangbukejian",
+      "unicode": "e8d5",
+      "unicode_decimal": 59605
+    },
+    {
+      "icon_id": "4905552",
+      "name": "锁定",
+      "font_class": "suoding",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
+    },
+    {
+      "icon_id": "5361031",
+      "name": "上移",
+      "font_class": "shangyi",
+      "unicode": "e7b5",
+      "unicode_decimal": 59317
+    },
+    {
+      "icon_id": "5361032",
+      "name": "下移",
+      "font_class": "xiayi",
+      "unicode": "e7b6",
+      "unicode_decimal": 59318
+    },
+    {
+      "icon_id": "5993150",
+      "name": "复制",
+      "font_class": "fuzhi",
+      "unicode": "ec7a",
+      "unicode_decimal": 60538
+    },
+    {
+      "icon_id": "6219264",
+      "name": "清空",
+      "font_class": "qingkong",
+      "unicode": "e946",
+      "unicode_decimal": 59718
+    },
+    {
+      "icon_id": "12323416",
+      "name": "粘贴",
+      "font_class": "niantie",
+      "unicode": "e64d",
+      "unicode_decimal": 58957
+    },
+    {
+      "icon_id": "12550475",
+      "name": "取消组合",
+      "font_class": "quxiaozuhe",
+      "unicode": "e632",
+      "unicode_decimal": 58930
+    },
+    {
+      "icon_id": "14421450",
+      "name": "合并选中图层",
+      "font_class": "hebingxxx_huaban1",
+      "unicode": "e669",
+      "unicode_decimal": 58985
+    },
+    {
+      "icon_id": "20299182",
+      "name": "回顶部",
+      "font_class": "zhiding-04-04-copy",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "22092193",
+      "name": "置底",
+      "font_class": "zhidi",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    }
+  ]
+}

@@ -2,7 +2,7 @@
  * @Author: sunheng
  * @Date: 2023-04-13 16:33:01
  * @LastEditors: sunheng
- * @LastEditTime: 2023-04-13 17:04:41
+ * @LastEditTime: 2023-04-27 14:17:50
  * @Description: 请填写简介
 -->
 <template>
@@ -35,3 +35,8 @@ watch(() => (props.option),(val) => {
     deep: false
 })
 </script>
+<style scoped lang="scss">
+:deep(img){
+    // margin: 0 auto;
+}
+</style>

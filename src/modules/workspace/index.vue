@@ -2,7 +2,7 @@
  * @Author: sunheng
  * @Date: 2023-03-25 19:18:46
  * @LastEditors: sunheng
- * @LastEditTime: 2023-04-13 17:18:42
+ * @LastEditTime: 2023-04-27 15:39:54
  * @Description: 请填写简介
 -->
 <template>
@@ -12,14 +12,18 @@
                 <space-side></space-side>
             </n-layout-sider>
             <n-layout>
-              <SpaceCanvas></SpaceCanvas>
+              <space-canvas></space-canvas>
             </n-layout>
+             <n-layout-sider bordered>
+               <space-config></space-config>
+            </n-layout-sider>
         </n-layout>
     </n-space>
 </template>
 <script lang="ts" setup>
 import SpaceSide from "./components/spaceSide/index.vue";
 import SpaceCanvas from "./components/spaceCanvas/index.vue";
+import SpaceConfig from "./components/spaceConfig/index.vue"
 </script>
 <style lang="scss" scoped>
 .works-space{

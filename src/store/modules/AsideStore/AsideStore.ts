@@ -17,8 +17,6 @@ const useAsideStore = defineStore({
     }),
     getters: {
         getPackagesList(): PackagesType {
-            console.log(this.packagesList,'this.packagesList');
-            
             return this.packagesList;
         },
     },

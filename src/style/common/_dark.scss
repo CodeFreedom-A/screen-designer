@@ -1,10 +1,7 @@
 @import "./val.scss";
-$dark: (
-    background-point: (
-        linear-gradient($--canvas-dark-color1 14px, transparent 0),
+$dark: (background-point: (linear-gradient($--canvas-dark-color1 14px, transparent 0),
         linear-gradient(90deg, transparent 14px, $--canvas-light-color1 0),
     ),
     background-color:$--canvas-dark-color1,
-    card-background:$--canvas-light-color,
-    
-);
+    card-background:$--canvas-dark-color,
+    right-bg:$--canvas-dark-color);

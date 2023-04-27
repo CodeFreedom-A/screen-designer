@@ -32,9 +32,7 @@ const props = defineProps({
 
 const handleClickItem = (item: string) => {
     // 他返回的是绑定的label
-    console.log(menuList.selectName, 'item');
     menuList.selectOption=menuList.categorys[item]
-    console.log(menuList.selectOption,'menuList.selectOption');
     
 }
 

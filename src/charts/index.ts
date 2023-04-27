@@ -2,7 +2,7 @@
  * @Author: sunheng
  * @Date: 2023-04-12 16:25:00
  * @LastEditors: sunheng
- * @LastEditTime: 2023-04-13 16:56:58
+ * @LastEditTime: 2023-04-26 15:15:25
  * @Description: 请填写简介
  */
 import { ConfigType } from "./index.d";
@@ -26,11 +26,8 @@ export const fetchImages = async (targetData?: ConfigType) => {
     if (!targetData) return "";
     // 新数据动态处理
     const { image } = targetData;
-    console.log(image,ImgModules, "image");
-
     for (const key in ImgModules) {
         const urlSplit = key.split("/");
-        console.log(urlSplit, "urlSplit");
 
         if (urlSplit[urlSplit.length - 1] === image) {
             return ImgModules[key]?.default;
@@ -49,7 +46,6 @@ export const createComponent = async (dropData: ConfigType) => {
     const chart = await import(
         `./com/${dropData.package}/${cateType}/${key}/config.ts`
     );
-    console.log(chart);
 
     return new chart.default();
 };

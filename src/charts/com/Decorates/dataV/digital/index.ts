@@ -11,5 +11,6 @@ export const DigItalConfig:ConfigType={
     title:"翻牌器",
     chartKey:'DigItal',
     conKey: 'DigItal',
+    cateType:PackagesCategoryEnum.DECORATES
     
 }
