@@ -26,6 +26,11 @@
                     class="cardbg"
                     @contextmenu="onContextMenu($event, proxy)"
                 >
+                    <template #cover>
+                        <img
+                            :src="PageCongfigStore.getPageConfiog.imgurl"
+                        />
+                    </template>
                     <slot></slot>
                 </n-card>
             </div>
@@ -41,13 +46,12 @@ import {
     nextTick,
     ComponentInternalInstance,
 } from "vue";
-
+import { usePageCongfigStore } from "@/store/modules/PageConfigStore";
 import { onContextMenu, getProxy } from "../../hooks/contentMenu.hook";
-
+let PageCongfigStore = usePageCongfigStore();
 import "@/assets/iconfont/iconfont.js";
 let proxy: Object | null = getProxy();
-const rectWidth = 600;
-const rectHeight = 320;
+
 const screensRef = ref(null);
 const containerRef = ref(null);
 let divHeight = ref(0);
@@ -61,18 +65,10 @@ const state = reactive({
     isShowReferLine: false, // 显示参考线
 });
 
-const shadow = computed(() => {
-    return {
-        x: 0,
-        y: 0,
-        width: rectWidth,
-        height: rectHeight,
-    };
-});
 const canvasStyle = computed(() => {
     return {
-        width: rectWidth,
-        height: rectHeight,
+        width: PageCongfigStore.getPageConfiog.width + "px",
+        height: PageCongfigStore.getPageConfiog.height + "px",
         transform: `scale(${state.scale})`,
     };
 });
@@ -177,18 +173,15 @@ body * {
     left: 100px;
 }
 #canvas {
-
-    width: 1920px;
-    height: 1080px;
+    // width: 1920px;
+    // height: 1080px;
     position: relative;
     overflow: hidden;
     box-shadow: 0 8px 10px #00000012;
-     @include bgcard("card-background");
+    @include bgcard("card-background");
 }
-    // :deep(.n-card){
-    //  background: red;
-    
-    // }
+// :deep(.n-card){
+//  background: red;
 
-
+// }
 </style>
