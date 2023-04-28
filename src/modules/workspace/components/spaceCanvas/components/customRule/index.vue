@@ -29,10 +29,14 @@
                     <template #cover>
                         <div
                             class="card-img"
-                            v-if="PageCongfigStore.getPageConfiog.imgurl&&PageCongfigStore.getPageConfiog.backType==0"
+                            v-if="
+                                PageCongfigStore.getPageConfiog.imgurl &&
+                                PageCongfigStore.getPageConfiog.backType == 0
+                            "
                         >
                             <n-image
                                 :src="PageCongfigStore.getPageConfiog.imgurl"
+                                preview-disabled
                             />
                         </div>
                     </template>

@@ -2,7 +2,7 @@
  * @Author: sunheng
  * @Date: 2023-04-12 16:43:25
  * @LastEditors: sunheng
- * @LastEditTime: 2023-04-13 17:23:39
+ * @LastEditTime: 2023-04-28 17:02:22
  * @Description: 请填写简介
 -->
 <template>
@@ -41,5 +41,8 @@ let props = defineProps({
 </script>
 
 <style scoped>
-.chart {}
+.chart {
+    width: 100%;
+    height: 100%;
+}
 </style>
