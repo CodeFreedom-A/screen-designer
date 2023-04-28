@@ -27,9 +27,14 @@
                     @contextmenu="onContextMenu($event, proxy)"
                 >
                     <template #cover>
-                        <img
-                            :src="PageCongfigStore.getPageConfiog.imgurl"
-                        />
+                        <div
+                            class="card-img"
+                            v-if="PageCongfigStore.getPageConfiog.imgurl&&PageCongfigStore.getPageConfiog.backType==0"
+                        >
+                            <n-image
+                                :src="PageCongfigStore.getPageConfiog.imgurl"
+                            />
+                        </div>
                     </template>
                     <slot></slot>
                 </n-card>
@@ -69,6 +74,10 @@ const canvasStyle = computed(() => {
     return {
         width: PageCongfigStore.getPageConfiog.width + "px",
         height: PageCongfigStore.getPageConfiog.height + "px",
+        background:
+            PageCongfigStore.getPageConfiog.color == ("#232324" || "#fafafc")
+                ? null
+                : PageCongfigStore.getPageConfiog.color,
         transform: `scale(${state.scale})`,
     };
 });
@@ -179,6 +188,18 @@ body * {
     overflow: hidden;
     box-shadow: 0 8px 10px #00000012;
     @include bgcard("card-background");
+}
+.card-img {
+    width: 100%;
+    height: 100%;
+    :deep(.n-image) {
+        width: 100%;
+        height: 100%;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
 }
 // :deep(.n-card){
 //  background: red;

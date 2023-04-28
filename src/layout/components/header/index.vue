@@ -2,7 +2,7 @@
  * @Author: sunheng
  * @Date: 2023-03-09 17:50:19
  * @LastEditors: sunheng
- * @LastEditTime: 2023-03-31 19:08:10
+ * @LastEditTime: 2023-04-28 16:17:19
  * @Description: 请填写简介
 -->
 <template>
@@ -27,11 +27,20 @@
 import { ref, defineEmits, onMounted } from "vue";
 import { SunnyOutline, Moon } from "@vicons/ionicons5";
 import { useThemeStore } from "@/store/modules/ThemeStore";
+import { usePageCongfigStore } from "@/store/modules/PageConfigStore";
 import { darkTheme } from "naive-ui";
 let active = ref<boolean>(false);
+let PageCongfigStore = usePageCongfigStore();
 let emits = defineEmits(["HandlerTheme"]);
 const { handleChange } = useThemeStore();
 const HandlerTheme = (e: boolean) => {
+    if (
+        (PageCongfigStore.getPageConfiog.color =
+            "#232324" || PageCongfigStore.getPageConfiog.color == "#fafafc")
+    ) {
+        let BaseColor = e ? "#232324" : "#fafafc";
+        PageCongfigStore.setPageConfig("color", BaseColor);
+    }
     if (e) return handleChange(darkTheme);
     handleChange(null);
 };
